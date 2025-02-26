@@ -26,11 +26,11 @@ def process_input(input_str):
     return value, error_message
 
 def handle_recursive_limit(input_number):
-    try:
-        value = factorial_recursive(input_number)
-    except RecursionError as ex:
-        value = factorial_iterative(input_number)
-    return value
+   if input_number < 998:
+       value = factorial_recursive(input_number)
+   else:
+       value = factorial_iterative(input_number)
+   return value
 
 def main():
     value = None
